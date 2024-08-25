@@ -1,8 +1,14 @@
-u ajustar o código para que o site permita que o usuário insira a quantidade de termos que deseja na sequência de Fibonacci. Vou atualizar o HTML para incluir um campo de entrada e um botão, e ajustar o JavaScript para calcular a sequência com base na entrada do usuário.
+O site "Contador Fibonacci" para que o usuário possa agora inserir a quantidade de termos que deseja ver na sequência de Fibonacci, tornando a experiência mais personalizada.
 
-1. Estrutura HTML (index.html)
-html
-Copiar código
+O "Contador Fibonacci" é uma ferramenta interativa que calcula e exibe os números da sequência de Fibonacci, começando com 0 e 1. A sequência é gerada somando os dois últimos números para obter o próximo termo (por exemplo, 0 + 1 = 1, 1 + 1 = 2, e assim por diante).
+
+No site, o usuário insere o número de termos desejado, e a sequência correspondente é gerada automaticamente e exibida de forma clara. Isso facilita a exploração da sequência, seja para fins educacionais, curiosidade matemática, ou prática de programação.
+
+A interface simples, com um campo de entrada e um botão, torna a interação intuitiva. O código JavaScript foi ajustado para garantir que o site funcione de maneira eficiente e responsiva.
+
+Essa atualização torna o "Contador Fibonacci" uma ferramenta prática e acessível para qualquer pessoa interessada em explorar essa fascinante sequência numérica.
+
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -11,13 +17,63 @@ Copiar código
     <title>Contador Fibonacci</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 50px;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        h1 {
+            color: #007BFF;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        input[type="number"] {
+            padding: 10px;
+            font-size: 1em;
+            width: 50%;
+            max-width: 300px;
+            border: 2px solid #007BFF;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            outline: none;
+        }
+        input[type="number"]:focus {
+            border-color: #0056b3;
+        }
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
         }
         #result {
-            margin-top: 20px;
+            margin-top: 30px;
             font-size: 1.5em;
+            color: #007BFF;
+            padding: 20px;
+            border: 2px solid #007BFF;
+            border-radius: 10px;
+            background-color: #e9f5ff;
+            width: 80%;
+            max-width: 600px;
+            word-wrap: break-word;
         }
     </style>
 </head>
