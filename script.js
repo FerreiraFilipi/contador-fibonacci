@@ -1,27 +1,21 @@
-function fibo(n) {
-    var a = 0;
-    var b = 1;
-    var sequence = [a, b];
-
-    for (var i = 2; i < n; i++) {
-        const c = a + b;
-        sequence.push(c);
-        a = b;
-        b = c;
-    }
-    return sequence;
+function generateFibonacci() {
+    const termInput = document.getElementById('termInput').value;
+    fetch('/fibonacci', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ terms: termInput }),
+    })
+    .then(response => response.json())
+    .then(data => {
+        const resultDiv = document.getElementById('result');
+        resultDiv.innerHTML = `Sequência: ${data.join(', ')}`;
+    })
+    .catch(error => console.error('Erro:', error));
 }
 
-function generateFibonacci() {
-    var termInput = document.getElementById("termInput").value;
-    var n = parseInt(termInput);
-
-    if (isNaN(n) || n <= 0) {
-        alert("Por favor, insira um número válido.");
-        return;
-    }
-
-    var sequence = fibo(n);
-    var resultDiv = document.getElementById("result");
-    resultDiv.textContent = sequence.join(', ');
+function clearFields() {
+    document.getElementById('termInput').value = '';
+    document.getElementById('result').innerHTML = '';
 }
