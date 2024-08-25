@@ -1,21 +1,25 @@
 function generateFibonacci() {
-    const termInput = document.getElementById('termInput').value;
-    fetch('/fibonacci', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ terms: termInput }),
-    })
-    .then(response => response.json())
-    .then(data => {
-        const resultDiv = document.getElementById('result');
-        resultDiv.innerHTML = `Sequência: ${data.join(', ')}`;
-    })
-    .catch(error => console.error('Erro:', error));
+    const numTerms = parseInt(document.getElementById('termInput').value);
+    if (isNaN(numTerms) || numTerms < 1) {
+        document.getElementById('result').innerHTML = "Por favor, insira um número válido.";
+        return;
+    }
+    
+    let a = 0;
+    let b = 1;
+    let fibonacciSequence = [a];
+    
+    for (let i = 1; i < numTerms; i++) {
+        const c = a + b;
+        fibonacciSequence.push(c);
+        a = b;
+        b = c;
+    }
+    
+    document.getElementById('result').innerHTML = fibonacciSequence.join(', ');
 }
 
-function clearFields() {
+function clearResult() {
     document.getElementById('termInput').value = '';
     document.getElementById('result').innerHTML = '';
 }
