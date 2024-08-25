@@ -60,7 +60,7 @@
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s ease;
-            margin-right: 10px; /* Espaço entre os botões */
+            margin-right: 10px; /* Espaçamento entre botões */
         }
         button:hover {
             background-color: #0056b3;
@@ -90,6 +90,9 @@
         .more-info a:hover {
             text-decoration: underline;
         }
+        .button-container {
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
@@ -102,8 +105,10 @@
     <h1>Contador Fibonacci</h1>
     <p>Insira o número de termos desejados:</p>
     <input type="number" id="termInput" min="1" placeholder="Digite um número">
-    <button onclick="generateFibonacci()">Gerar Sequência</button>
-    <button onclick="clearFields()">Limpar</button>
+    <div class="button-container">
+        <button onclick="generateFibonacci()">Gerar Sequência</button>
+        <button onclick="clearResult()">Limpar</button>
+    </div>
     <div id="result"></div>
     <script src="script.js"></script>
 </body>
