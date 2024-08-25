@@ -7,13 +7,13 @@ function generateFibonacci() {
     
     let a = 0;
     let b = 1;
-    let fibonacciSequence = [a];
+    let fibonacciSequence = [];
     
-    for (let i = 1; i < numTerms; i++) {
-        const c = a + b;
-        fibonacciSequence.push(c);
+    for (let i = 1; i <= numTerms; i++) {
+        fibonacciSequence.push(a);
+        let nextTerm = a + b;
         a = b;
-        b = c;
+        b = nextTerm;
     }
     
     document.getElementById('result').innerHTML = fibonacciSequence.join(', ');
