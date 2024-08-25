@@ -60,6 +60,7 @@
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            margin-right: 10px; /* Espaço entre os botões */
         }
         button:hover {
             background-color: #0056b3;
@@ -102,6 +103,7 @@
     <p>Insira o número de termos desejados:</p>
     <input type="number" id="termInput" min="1" placeholder="Digite um número">
     <button onclick="generateFibonacci()">Gerar Sequência</button>
+    <button onclick="clearFields()">Limpar</button>
     <div id="result"></div>
     <script src="script.js"></script>
 </body>
