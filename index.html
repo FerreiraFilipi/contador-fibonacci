@@ -1,0 +1,32 @@
+u ajustar o código para que o site permita que o usuário insira a quantidade de termos que deseja na sequência de Fibonacci. Vou atualizar o HTML para incluir um campo de entrada e um botão, e ajustar o JavaScript para calcular a sequência com base na entrada do usuário.
+
+1. Estrutura HTML (index.html)
+html
+Copiar código
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador Fibonacci</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Contador Fibonacci</h1>
+    <p>Insira o número de termos desejados:</p>
+    <input type="number" id="termInput" min="1" placeholder="Digite um número">
+    <button onclick="generateFibonacci()">Gerar Sequência</button>
+    <div id="result"></div>
+    <script src="script.js"></script>
+</body>
+</html>
